@@ -117,6 +117,7 @@ public class ActivityUiDialog extends ActivityRecog {
         Log.i(TAG, "requestCode" + requestCode);
         String result = "";
         if (requestCode == 2) {
+            boolean isNull=true;
             String message = "对话框的识别结果：";
             if (resultCode == RESULT_OK) {
                 ArrayList results = data.getStringArrayListExtra("results");
@@ -124,12 +125,13 @@ public class ActivityUiDialog extends ActivityRecog {
                     message += results.get(0);
                     result = String.valueOf(results.get(0));
                 }
-
+              isNull=true;
             } else {
+                isNull=false;
                 message += "没有结果";
                 deletFile(path);
             }
-            if (message!=null&&!message.equals("对话框的识别结果：没有结果")){
+            if (isNull&&result!=null&&!result.equals("")){
             SavePath savePath = new SavePath();
             savePath.setPath(path);
             savePath.setContent(result);
