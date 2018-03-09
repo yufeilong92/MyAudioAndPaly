@@ -36,8 +36,6 @@ public class OnlineRecogParams extends CommonRecogParams {
 
     public Map<String, Object> fetch(SharedPreferences sp) {
         Map<String, Object> map = super.fetch(sp);
-        map.put("_outfile",true);
-        map.put("_tips_sound",true);
         PidBuilder builder = new PidBuilder();
         map = builder.addPidInfo(map); // 生成PID， PID 网络在线有效
         return map;

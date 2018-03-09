@@ -90,8 +90,6 @@ public class ActivityUiDialog extends ActivityRecog {
     protected void start() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         Map<String, Object> params = apiParams.fetch(sp);  // params可以手动填入
-        params.put("_outfile", true);
-        params.put("_tips_sound", true);
         path = (String) params.get(SpeechConstant.OUT_FILE);
         // BaiduASRDigitalDialog的输入参数
         input = new DigitalDialogInput(myRecognizer, listener, params);

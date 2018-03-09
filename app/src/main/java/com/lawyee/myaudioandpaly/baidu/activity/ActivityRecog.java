@@ -88,8 +88,6 @@ public abstract class ActivityRecog extends MainActivity implements IStatus {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ActivityRecog.this);
         //  上面的获取是为了生成下面的Map， 自己集成时可以忽略
         Map<String, Object> params = apiParams.fetch(sp);
-        params.put("_outfile",true);
-        params.put("_tips_sound",true);
         // 集成时不需要上面的代码，只需要params参数。
         // 这里打印出params， 填写至您自己的app中，直接调用下面这行代码即可。
         myRecognizer.start(params);

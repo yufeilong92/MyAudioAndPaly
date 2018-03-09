@@ -25,7 +25,12 @@ public abstract class CommonSetting extends PreferenceActivity implements Prefer
     }
 
     private void bind(PreferenceGroup group) {
+        // TODO: 2018/3/9 设置默认设置 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.putBoolean("_outfile",true);
+        edit.putBoolean("_tips_sound",false);
+        edit.commit();
         for (int i = 0; i < group.getPreferenceCount(); i++) {
             Preference p = group.getPreference(i);
             if (p instanceof PreferenceGroup) {

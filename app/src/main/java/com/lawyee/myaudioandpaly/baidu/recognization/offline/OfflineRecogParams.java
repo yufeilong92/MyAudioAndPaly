@@ -29,8 +29,6 @@ public class OfflineRecogParams extends CommonRecogParams {
     public Map<String, Object> fetch(SharedPreferences sp) {
 
         Map<String, Object> map = super.fetch(sp);
-        map.put("_outfile",true);
-        map.put("_tips_sound",true);
         map.put(SpeechConstant.DECODER, 2);
         return map;
 
