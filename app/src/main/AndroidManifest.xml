@@ -65,24 +65,6 @@
             android:label="在线识别设置"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.DeviceDefault.Light" />
-        <activity
-            android:name=".baidu.activity.setting.OfflineSetting"
-            android:configChanges="orientation|keyboardHidden|screenLayout"
-            android:label="离线命令词设置"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.DeviceDefault.Light" />
-        <activity
-            android:name=".baidu.activity.setting.NluSetting"
-            android:configChanges="orientation|keyboardHidden|screenLayout"
-            android:label="语义设置"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.DeviceDefault.Light" />
-        <activity
-            android:name=".baidu.activity.setting.AllSetting"
-            android:configChanges="orientation|keyboardHidden|screenLayout"
-            android:label="全部识别设置"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.DeviceDefault.Light" />
     </application>
 
 </manifest>
