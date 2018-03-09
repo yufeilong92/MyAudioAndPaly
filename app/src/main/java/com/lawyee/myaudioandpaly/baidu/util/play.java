@@ -28,7 +28,9 @@ public class play {
     private AudioTrack player;
 
     public void playAudio(String path) {
-
+            if (path==null){
+                return;
+            }
             DataInputStream dis = null;
             try {
                 //从音频文件中读取声音

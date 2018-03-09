@@ -82,7 +82,6 @@ public class MainListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 play play = new play();
                 play.playAudio(savePath.getPath());
-
             }
         });
         mViewHolder.mBtnTranslate.setOnClickListener(new View.OnClickListener() {

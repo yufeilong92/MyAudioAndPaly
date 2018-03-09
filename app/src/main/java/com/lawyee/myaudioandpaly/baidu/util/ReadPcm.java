@@ -25,7 +25,8 @@ import java.io.InputStream;
  * 注意：本内容仅限于北京法意科技有限公司内部传阅，禁止外泄以及用于其他的商业目
  */
 public class ReadPcm {
-    public void playPcm(File file) {
+    public void playPcm(String name) {
+        File file = new File(name);
         if (file == null) {
             return;
         }
@@ -37,23 +38,25 @@ public class ReadPcm {
             InputStream is = new FileInputStream(file);
             BufferedInputStream bis = new BufferedInputStream(is);
             DataInputStream dis = new DataInputStream(bis);
+            /**
+             * AudioFormat.CHANNEL_CONFIGURATION_STEREO //双声道
+             * AudioFormat.CHANNEL_CONFIGURATION_MONO 单声道
+             *
+             */
+             int sampleRateInHz=16000;
+            AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
+                    16000, AudioFormat.CHANNEL_CONFIGURATION_MONO,
+                    AudioFormat.ENCODING_PCM_16BIT,
+                    musicLength,
+                    AudioTrack.MODE_STREAM);
+            audioTrack.play();
+
             int i = 0;
             while (dis.available() > 0) {
                 music[i] = dis.readShort();
                 i++;
             }
             dis.close();
-            /**
-             * AudioFormat.CHANNEL_CONFIGURATION_STEREO //双声道
-             * AudioFormat.CHANNEL_CONFIGURATION_MONO 单声道
-             *
-             */
-            AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
-                    16000, AudioFormat.CHANNEL_CONFIGURATION_STEREO,
-                    AudioFormat.ENCODING_PCM_16BIT,
-                    musicLength * 2,
-                    AudioTrack.MODE_STREAM);
-            audioTrack.play();
             audioTrack.write(music, 0, musicLength);
             audioTrack.stop();
         } catch (Throwable t) {
