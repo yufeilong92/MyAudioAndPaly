@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    tools:context="com.lawyee.myaudioandpaly.MainActivity">
+
+    <LinearLayout style="@style/TitleBar"
+        android:id="@+id/linearLayout">
+        <ImageView
+
+            android:id="@+id/img_black"
+            style="@style/TitleBarAction"
+            />
+         <TextView
+             style="@style/TitleBarText"
+             android:text="测试录音"/>
+        <ImageView
+            android:id="@+id/img_setting"
+            style="@style/TitleBarAction"
+            android:src="@mipmap/setting"/>
+    </LinearLayout>
+
+    <ListView
+        android:layout_marginTop="@dimen/dp_1"
+        android:id="@+id/lv_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_above="@id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout2">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/dp_8"
+            android:background="@drawable/main_select_bg_imgbtn"
+            android:src="@mipmap/ic_main_audio" />
+
+        <TextView
+            android:id="@+id/btn_play"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_32"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/main_select_bg__btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="开始录音"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+</RelativeLayout>
