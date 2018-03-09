@@ -45,7 +45,7 @@ public class ReadPcm {
              */
              int sampleRateInHz=16000;
             AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
-                    16000, AudioFormat.CHANNEL_CONFIGURATION_MONO,
+                    sampleRateInHz, AudioFormat.CHANNEL_CONFIGURATION_MONO,
                     AudioFormat.ENCODING_PCM_16BIT,
                     musicLength,
                     AudioTrack.MODE_STREAM);
