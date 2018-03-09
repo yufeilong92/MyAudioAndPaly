@@ -2,7 +2,6 @@ package com.lawyee.myaudioandpaly.adapter;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +13,11 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.lawyee.myaudioandpaly.R;
 import com.lawyee.myaudioandpaly.baidu.translate.TransApi;
-import com.lawyee.myaudioandpaly.baidu.util.ReadPcm;
+import com.lawyee.myaudioandpaly.baidu.util.play;
 import com.lawyee.myaudioandpaly.constant.AppSet;
 import com.lawyee.myaudioandpaly.vo.SavePath;
 import com.lawyee.myaudioandpaly.vo.TranslateResult;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,9 +80,9 @@ public class MainListAdapter extends BaseAdapter {
         mViewHolder.mImgPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ReadPcm readPcm = new ReadPcm();
-                File file = new File(savePath.getPath());
-                readPcm.playPcm(file);
+                play play = new play();
+                play.playAudio(savePath.getPath());
+
             }
         });
         mViewHolder.mBtnTranslate.setOnClickListener(new View.OnClickListener() {

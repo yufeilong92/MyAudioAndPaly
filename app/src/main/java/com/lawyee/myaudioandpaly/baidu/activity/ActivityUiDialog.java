@@ -20,6 +20,7 @@ import com.lawyee.voicerecognition.android.ui.BaiduASRDigitalDialog;
 import com.lawyee.voicerecognition.android.ui.DigitalDialogInput;
 import com.lawyee.voicerecognition.android.ui.SimpleTransApplication;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -116,24 +117,28 @@ public class ActivityUiDialog extends ActivityRecog {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         running = false;
         Log.i(TAG, "requestCode" + requestCode);
-        String result="";
+        String result = "";
         if (requestCode == 2) {
             String message = "对话框的识别结果：";
             if (resultCode == RESULT_OK) {
                 ArrayList results = data.getStringArrayListExtra("results");
                 if (results != null && results.size() > 0) {
                     message += results.get(0);
-                    result= String.valueOf(results.get(0));
+                    result = String.valueOf(results.get(0));
                 }
+
             } else {
                 message += "没有结果";
+                deletFile(path);
             }
-            Logger.info(message);
+            if (message!=null&&!message.equals("对话框的识别结果：没有结果")){
             SavePath savePath = new SavePath();
             savePath.setPath(path);
             savePath.setContent(result);
             sendMessage(savePath);
+            }
             Toast.makeText(ActivityUiDialog.this, "" + message, Toast.LENGTH_SHORT).show();
+            Logger.info(message);
             mBtnPlay.setText("开始录音");
             mBtnPlay.setEnabled(true);
             mImgSetting.setEnabled(true);
@@ -149,5 +154,12 @@ public class ActivityUiDialog extends ActivityRecog {
             myRecognizer.release();
             finish();
         }
+    }
+    private void deletFile(String name){
+        File file = new File(name);
+        if (file!=null){
+            file.delete();
+        }
+
     }
 }

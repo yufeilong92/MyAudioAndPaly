@@ -26,11 +26,11 @@ import java.io.InputStream;
  */
 public class ReadPcm {
     public void playPcm(File file) {
-
         if (file == null) {
             return;
         }
         //读取文件
+
         int musicLength = (int) (file.length() / 2);
         short[] music = new short[musicLength];
         try {
@@ -49,7 +49,7 @@ public class ReadPcm {
              *
              */
             AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
-                    44100, AudioFormat.CHANNEL_CONFIGURATION_MONO,
+                    16000, AudioFormat.CHANNEL_CONFIGURATION_STEREO,
                     AudioFormat.ENCODING_PCM_16BIT,
                     musicLength * 2,
                     AudioTrack.MODE_STREAM);
