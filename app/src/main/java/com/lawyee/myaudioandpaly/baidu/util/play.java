@@ -16,7 +16,7 @@ import java.io.IOException;
  * @version V 1.0 xxxxxxxx
  * @Title: MyApplication
  * @Package com.lawyee.myapplication
- * @Description: $todo$
+ * @Description: 播放pcm语音
  * @author: YFL
  * @date: 2018/3/9 14:04
  * @verdescript 版本号 修改时间  修改人 修改的概要说明

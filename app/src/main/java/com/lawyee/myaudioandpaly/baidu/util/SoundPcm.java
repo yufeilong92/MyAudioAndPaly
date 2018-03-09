@@ -20,7 +20,7 @@ import java.io.OutputStream;
  * @version V 1.0 xxxxxxxx
  * @Title: MyAudioAndPaly
  * @Package com.lawyee.myaudioandpaly.baidu.util
- * @Description: $todo$
+ * @Description: 录制pcm格式录音
  * @author: YFL
  * @date: 2018/3/9 11:36
  * @verdescript 版本号 修改时间  修改人 修改的概要说明

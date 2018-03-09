@@ -17,7 +17,7 @@ import java.io.InputStream;
  * @version V 1.0 xxxxxxxx
  * @Title: MyAudioAndPaly
  * @Package com.lawyee.myaudioandpaly.baidu.util
- * @Description: $todo$
+ * @Description: 播放pcm语音
  * @author: YFL
  * @date: 2018/3/8 15:18
  * @verdescript 版本号 修改时间  修改人 修改的概要说明
